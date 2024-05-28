@@ -43,5 +43,5 @@ var topKFrequent = function(nums, k) {
 
 };
 
-// Time Complexity: O(n)
-// Space Complexity: O(n)
+// Time Complexity: O(N)
+// Space Complexity: O(N)

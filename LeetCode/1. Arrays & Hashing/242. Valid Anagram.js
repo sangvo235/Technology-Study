@@ -15,5 +15,5 @@ function sorter(str) {
     return str.split('').sort().join('')
 }
 
-// Time Complexity: O(nlogn)
-// Space Complexity: O(n)
+// Time Complexity: O(NlogN)
+// Space Complexity: O(N)

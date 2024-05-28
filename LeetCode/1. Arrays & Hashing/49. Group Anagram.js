@@ -22,5 +22,5 @@ var groupAnagrams = function(strs) {
     
 };
 
-// Time Complexity: O(nlogn)
-// Space Complexity: O(n)
+// Time Complexity: O(NlogN)
+// Space Complexity: O(N)

@@ -23,5 +23,5 @@ var twoSum = function(nums, target) {
 };
 
 // Two Pass - Hash Map
-// Time Complexity: O(n) 
-// Space Complexity: O(n)
+// Time Complexity: O(N) 
+// Space Complexity: O(N)
