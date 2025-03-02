@@ -21,3 +21,6 @@ function insertionSort(arr) {
 const arr = [8, 20, -2, 4, -6];
 insertionSort(arr);
 console.log(arr);
+
+// Time Complexity = O(n^2)
+// Space Complexity = O(1)
