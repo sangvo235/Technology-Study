@@ -9,7 +9,7 @@ function selectionSort(arr) {
         }
 
         if (minIndex !== i) {
-            [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]
+            [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
         }
 
         console.log(arr);
