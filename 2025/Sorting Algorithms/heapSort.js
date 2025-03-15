@@ -23,22 +23,20 @@ function heapSort(arr) {
     let length = arr.length;
     let parentIndex = Math.floor(length / 2 - 1);
 
-    // essentially to make it a max-heap first
+    // Unsorted array --> Max-heap
     for (let i = parentIndex; i >= 0; i--) {
         heapify(arr, length, i);
     }
 
     // Max-heap is achieved so we know the root value is largest
     for (let i = length - 1; i > 0; i--) {
-        // swapping root with last element
-        // [20, 8, -2, 4, -6] --> [-6, 8, -2, 4, 20]
+        // swapping root with last element: [20, 8, -2, 4, -6] --> [-6, 8, -2, 4, 20]
         [arr[0], arr[i]] = [arr[i], arr[0]];
         
-        // heapify the reduced heap 
-        // [-6, 8, -2, 4]
+        // heapify the reduced heap: [-6, 8, -2, 4]
         heapify(arr, i, 0);
     }
-    // the array should be now [-6, -2, 4, 8, 20]
+    // Output: [-6, -2, 4, 8, 20]
     return arr;
 }
 
