@@ -4,11 +4,11 @@ function heapify(arr, length, parentIndex) {
     let rightChildIndex = leftChildIndex + 1;
 
     if (leftChildIndex < length && arr[leftChildIndex] > arr[largest]) {
-        largest = left;
+        largest = leftChildIndex;
     }
 
     if (rightChildIndex < length && arr[rightChildIndex] > arr[largest]) {
-        largest = right;
+        largest = rightChildIndex;
     }
 
     if (largest !== parentIndex) {
