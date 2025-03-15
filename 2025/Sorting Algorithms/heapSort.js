@@ -1,13 +1,13 @@
 function heapify(arr, length, parentIndex) {
     let largest = parentIndex;
-    let left = parentIndex * 2 + 1;
-    let right = left + 1;
+    let leftChildIndex = parentIndex * 2 + 1;
+    let rightChildIndex = leftChildIndex + 1;
 
-    if (left < length && arr[left] > arr[largest]) {
+    if (leftChildIndex < length && arr[leftChildIndex] > arr[largest]) {
         largest = left;
     }
 
-    if (right < length && arr[right] > arr[largest]) {
+    if (rightChildIndex < length && arr[rightChildIndex] > arr[largest]) {
         largest = right;
     }
 
@@ -23,18 +23,22 @@ function heapSort(arr) {
     let length = arr.length;
     let parentIndex = Math.floor(length / 2 - 1);
 
+    // essentially to make it a max-heap first
     for (let i = parentIndex; i >= 0; i--) {
         heapify(arr, length, i);
     }
 
-    // same as poll
+    // Max-heap is achieved so we know the root value is largest
     for (let i = length - 1; i > 0; i--) {
         // swapping root with last element
+        // [20, 8, -2, 4, -6] --> [-6, 8, -2, 4, 20]
         [arr[0], arr[i]] = [arr[i], arr[0]];
         
-        // heapify the reduced heap
+        // heapify the reduced heap 
+        // [-6, 8, -2, 4]
         heapify(arr, i, 0);
     }
+    // the array should be now [-6, -2, 4, 8, 20]
     return arr;
 }
 
