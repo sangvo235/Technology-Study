@@ -21,18 +21,19 @@ function heapify(arr, length, parentIndex) {
 
 function heapSort(arr) {
     let length = arr.length;
-    let lastParentNode = Math.floor(length / 2 - 1);
-    let lastChildNode = length - 1;
+    let parentIndex = Math.floor(length / 2 - 1);
 
-    while (lastParentNode >= 0) {
-        heapify(arr, length, lastParentNode);
-        lastParentNode--;
+    for (let i = parentIndex; i >= 0; i--) {
+        heapify(arr, length, i);
     }
 
-    while (lastChildNode >= 0) {
-        [arr[0], arr[lastChildNode]] =  [arr[lastChildNode], arr[0]];
-        heapify(arr, lastChildNode, 0);
-        lastChildNode--;
+    // same as poll
+    for (let i = length - 1; i > 0; i--) {
+        // swapping root with last element
+        [arr[0], arr[i]] = [arr[i], arr[0]];
+        
+        // heapify the reduced heap
+        heapify(arr, i, 0);
     }
     return arr;
 }
