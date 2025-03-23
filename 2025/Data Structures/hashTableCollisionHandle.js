@@ -22,15 +22,19 @@ class HashTable {
 
     set(key, value) {
         const index = this.hash(key);
-        // this.table[index] = value;
         const bucket = this.table[index];
-        if(!bucket) { // bucket does not exist 
+
+        // check if the bucket exist or not
+        if(!bucket) { 
             this.table[index] = [[key, value]];
-        } else { // bucket exist
+        } else { 
+            // check if the keys are the same --> "name" and "mane" although same bucket is not the same key.
+            // If we are inserting ["name", "Diana"] and there is ["name", "John"] already we need to replace the value only.
             const sameKeyItem = bucket.find(item => item[0] === key);
-            if(sameKeyItem) { // with a key
+
+            if(sameKeyItem) { 
                 sameKeyItem[1] = value;
-            } else { // without a key
+            } else {
                 bucket.push([key, value]);
             }
         }
@@ -38,10 +42,11 @@ class HashTable {
 
     get(key) {
         const index = this.hash(key);
-        // return this.table[index];
         const bucket = this.table[index];
         if(bucket) {
+            // check if there is the same existing key in the bucket to retrieve
             const sameKeyItem = bucket.find(item => item[0] === key);
+
             if(sameKeyItem) {
                 return sameKeyItem[1];
             }
@@ -51,13 +56,15 @@ class HashTable {
 
     remove(key) {
         const index = this.hash(key);
-        // this.table[index] = undefined;
         const bucket = this.table[index];
         if(bucket) {
+            // check if there is the same existing key in the bucket to remove
             const sameKeyItem = bucket.find(item => item[0] === key);
+
             if(sameKeyItem) {
               bucket.splice(bucket.indexOf(sameKeyItem), 1);
             }
+            return console.log("No valid key found for removal!");
         }
     }
 
@@ -86,6 +93,7 @@ table.set("name", "Diana");
 
 // removing a value based on key
 table.remove("name");
+table.remove("ss");
 
 table.display();
 
