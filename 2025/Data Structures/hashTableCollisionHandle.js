@@ -88,3 +88,6 @@ table.set("name", "Diana");
 table.remove("name");
 
 table.display();
+
+// Time Complexity = O(1) --> set, get, and remove (worst case is O(n) if they are all in the same bucket but unlikely if the hash function is done properly)
+// Space Complexity = O(n) --> due to the buckets
