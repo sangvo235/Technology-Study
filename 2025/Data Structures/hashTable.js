@@ -1,8 +1,10 @@
 // Hash Table Implementation
+// constructor to allow: const table = new HashTable(int);
+// hashing function to convert a string key to a numeric index
 // set to store a key-value pair
 // get to retrieve a value given its key
-// remove to delete a key value pair
-// hashing function to convert a string key to a numeric index
+// remove to delete a value given its key
+// display() results function 
 
 class HashTable {
     constructor(size) {
@@ -13,9 +15,9 @@ class HashTable {
     hash(key) {
         let total = 0;
         for (let i = 0; i < key.length; i++) {
-            total += key.charCodeAt(i);
+            total += key.charCodeAt(i); // convert to ASCII value
         }
-        return total % this.size;
+        return total % this.size; // ensure ASCII values are transformed to be in the array size range
     }
 
     set(key, value) {
@@ -36,7 +38,7 @@ class HashTable {
     display() {
         for (let i = 0; i < this.table.length; i++) {
             if(this.table[i]) {
-                console.log(i, this.table[i]);
+                console.log("Index: " + i + " | Value: "+ this.table[i]);
             }
         }
     }
