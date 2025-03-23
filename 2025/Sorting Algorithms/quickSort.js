@@ -21,9 +21,7 @@ function quickSort(arr) {
         }
     }
     // recursion
-    console.log("left: " + left);
-    console.log("right: " + right);
-    console.log("arr: " + arr);
+    // [...quickSort([]), -6, ...quickSort([-2, 4]), 7, ...quickSort([8, 20])];
     return [...quickSort(left), pivot, ...quickSort(right)];
 }
 
