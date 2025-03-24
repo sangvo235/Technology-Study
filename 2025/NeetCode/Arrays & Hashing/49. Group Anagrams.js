@@ -20,3 +20,5 @@ var groupAnagrams = function(strs) {
     
 };
 
+// Time Complexity = O(m * nlogn) where m = number of words in strs | n = number of characters in each word
+// Space Complexity = O(n)
