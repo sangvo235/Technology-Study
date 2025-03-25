@@ -44,3 +44,6 @@ var decode = function(s) {
  */
 
 console.log(decode(encode(["Hello", "World", "Sundayz"])));
+
+// Time Complexity = O(n)
+// Space Complexity = O(n)
