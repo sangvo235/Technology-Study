@@ -4,16 +4,22 @@
  */
 var isPalindrome = function(s) {
 
-    s = s.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
-
     let left = 0;
     let right = s.length - 1;
 
     while (left < right) {
 
-        if(s[left])
+        if (!isAlphanumeric(s[left])) {
+            left++;
+            continue;
+        }
 
-        if (s[left] === s[right]) {
+        if (!isAlphanumeric(s[right])) {
+            right--;
+            continue;
+        }
+
+        if (s[left].toLowerCase() === s[right].toLowerCase()) {
             left++;
             right--;
         } else {
@@ -23,5 +29,9 @@ var isPalindrome = function(s) {
     return true;   
 };
 
+function isAlphanumeric(char) {
+    return /[a-zA-Z0-9]/.test(char);
+}
+
 // Time Complexity = O(n)
-// Space Complexity = O(n)
+// Space Complexity = O(1)
