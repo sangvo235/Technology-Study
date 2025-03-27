@@ -10,6 +10,9 @@ var isPalindrome = function(s) {
     let right = s.length - 1;
 
     while (left < right) {
+
+        if(s[left])
+
         if (s[left] === s[right]) {
             left++;
             right--;
@@ -21,4 +24,4 @@ var isPalindrome = function(s) {
 };
 
 // Time Complexity = O(n)
-// Space Complexity = O(1)
+// Space Complexity = O(n)
