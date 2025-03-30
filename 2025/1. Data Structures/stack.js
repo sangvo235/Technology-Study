@@ -7,6 +7,7 @@ class Stack {
     // add element to top of stack
     push(element) {
         this.items[this.count] = element;
+        console.log(`${element} added to index ${this.count}`);
         this.count++;
         return this.count - 1;
     }
