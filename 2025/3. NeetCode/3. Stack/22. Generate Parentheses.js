@@ -5,12 +5,12 @@
 var generateParenthesis = function(n) {
     const result = [];
 
-    generate(result, n, "", 0, 0)
+    backtrack(result, n, "", 0, 0)
 
     return result;
 };
 
-function generate(result, n, curr, openCount, closeCount) {
+function backtrack(result, n, curr, openCount, closeCount) {
 
     // Base case - if we formed a value sequence
     if(openCount === n && closeCount === openCount) {
@@ -19,11 +19,11 @@ function generate(result, n, curr, openCount, closeCount) {
     }
 
     if(openCount < n) {
-        generate(result, n, curr + "(", openCount + 1, closeCount);
+        backtrack(result, n, curr + "(", openCount + 1, closeCount);
     }
 
     if(openCount > closeCount) {
-        generate(result, n, curr + ")", openCount, closeCount + 1);
+        backtrack(result, n, curr + ")", openCount, closeCount + 1);
     }
 
 }
