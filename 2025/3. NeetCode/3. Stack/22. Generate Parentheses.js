@@ -12,17 +12,15 @@ var generateParenthesis = function(n) {
 
 function generate(result, n, curr, openCount, closeCount) {
 
-    console.log(curr)
-
-    if(openCount > n) return;
-
     // Base case - if we formed a value sequence
     if(openCount === n && closeCount === openCount) {
         result.push(curr);
         return;
     }
 
-    generate(result, n, curr + "(", openCount + 1, closeCount);
+    if(openCount < n) {
+        generate(result, n, curr + "(", openCount + 1, closeCount);
+    }
 
     if(openCount > closeCount) {
         generate(result, n, curr + ")", openCount, closeCount + 1);
