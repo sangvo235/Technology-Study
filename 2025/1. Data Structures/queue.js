@@ -29,6 +29,24 @@ class Queue {
         return deleteItem;
     }
 
+    // Check first element in queue
+    peek() {
+        console.log(`First element is ${this.items[0]}`)
+        return this.items[0];
+    }
+
+    // Check if queue is empty
+    isEmpty() {
+        console.log(this.count === 0 ? 'Queue is empty' : 'Queue is not empty');
+        return this.count === 0;
+    }    
+
+    // Check size of queue
+    size() {
+        console.log(`${this.count} elements in queue`);
+        return this.count;
+    }    
+
 }
 
 const queue = new Queue();
@@ -36,5 +54,11 @@ const queue = new Queue();
 queue.enqueue(100);
 queue.enqueue(200);
 queue.enqueue(300);
-
+queue.isEmpty();
+queue.peek();
+queue.size();
 queue.dequeue();
+queue.dequeue();
+queue.size();
+queue.dequeue();
+queue.isEmpty();
