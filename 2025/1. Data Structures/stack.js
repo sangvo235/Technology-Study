@@ -4,7 +4,7 @@ class Stack {
         this.count = 0;
     }
 
-    // add element to top of stack
+    // Add element to top of stack
     push(element) {
         this.items[this.count] = element;
         console.log(`${element} added to index ${this.count}`);
@@ -12,9 +12,8 @@ class Stack {
         return this.count - 1;
     }
 
-    // return and remove top element in stack
-    // return undefined if stack is empty 
-
+    // Return and remove top element in stack
+    // Return undefined if stack is empty 
     pop() {
         if(this.count === 0) return undefined;
         let deleteItem = this.items[this.count - 1];
@@ -23,15 +22,35 @@ class Stack {
         return deleteItem;
     }
 
+    // Check top element in stack
+    peek() {
+        console.log(`Top element is ${this.items[this.count - 1]}`)
+        return this.items[this.count - 1];
+    }
 
+    // Check if stack is empty
+    isEmpty() {
+        console.log(this.count === 0 ? 'Stack is empty' : 'Stack is not empty');
+        return this.count === 0;
+    }
+
+    // Check size of stack
+    size() {
+        console.log(`${this.count} elements in stack`);
+        return this.count;
+    }
 }
 
 const stack = new Stack();
-
+stack.isEmpty();
 stack.push(100);
 stack.push(200);
+stack.isEmpty();
 stack.push(300);
+stack.peek();
+stack.size();
 stack.pop();
 stack.pop();
 stack.pop();
 console.log(stack.pop());
+stack.peek();
