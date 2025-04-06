@@ -37,5 +37,5 @@ var isAnagram = function(s, t) {
 
 };
 
-// Time Complexity = O(n + m)
+// Time Complexity = O(n+m)
 // Space Complexity = O(n)

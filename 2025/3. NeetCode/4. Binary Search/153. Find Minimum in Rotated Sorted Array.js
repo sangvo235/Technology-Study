@@ -18,5 +18,5 @@ var findMin = function(nums) {
     return nums[left];
 };
 
-// Time Complexity: O(log n)
+// Time Complexity: O(logn)
 // Space Complexity: O(1)

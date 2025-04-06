@@ -29,5 +29,5 @@ var minEatingSpeed = function(piles, h) {
 
 };
 
-// Time Complexity: O(n * log m)
+// Time Complexity: O(n*logm)
 // Space Complexity: O(1)
