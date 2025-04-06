@@ -31,5 +31,5 @@ var searchMatrix = function(matrix, target) {
     return false;
 };
 
-// Time Complexity: O(log n)
+// Time Complexity: O(log(m*n))
 // Space Complexity: O(1)
