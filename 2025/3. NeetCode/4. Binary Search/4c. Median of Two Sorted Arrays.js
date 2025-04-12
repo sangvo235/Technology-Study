@@ -3,8 +3,8 @@
  * @param {number[]} nums2
  * @return {number}
  */
-var findMedianSortedArrays = function(nums1, nums2) {
-    
+var findMedianSortedArrays = function (nums1, nums2) {
+
     // need to ensure num1 is the smaller array.
     if (nums1.length > nums2.length) {
         [nums1, nums2] = [nums2, nums1];
@@ -17,15 +17,15 @@ var findMedianSortedArrays = function(nums1, nums2) {
     let right = len1;
 
     while (left <= right) {
-        let partition1 = Math.floor((left + right) / 2); 
-        let partition2 = Math.floor((len1 + len2 + 1) / 2) - partition1; 
+        let partition1 = Math.floor((left + right) / 2);
+        let partition2 = Math.floor((len1 + len2 + 1) / 2) - partition1;
 
         let left1 = partition1 > 0 ? nums1[partition1 - 1] : -Infinity;
         let right1 = partition1 < len1 ? nums1[partition1] : Infinity;
 
         let left2 = partition2 > 0 ? nums2[partition2 - 1] : -Infinity;
         let right2 = partition2 < len2 ? nums2[partition2] : Infinity;
-        
+
         if (left1 <= right2 && left2 <= right1) {
             if ((len1 + len2) % 2 === 0) {
                 // even number --> leftEnd1 + rightStart2
@@ -47,5 +47,5 @@ var findMedianSortedArrays = function(nums1, nums2) {
     }
 };
 
-// Time Complexity: O(log(min(m, n))) 
+// Time Complexity: O(log(min(m, n)))
 // Space Complexity: O(1)
