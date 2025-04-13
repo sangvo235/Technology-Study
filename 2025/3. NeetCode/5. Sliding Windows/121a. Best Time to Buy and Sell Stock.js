@@ -14,7 +14,6 @@ var maxProfit = function(prices) {
         } else {
             left = right;
         }
-        
         right++;
     }
 
