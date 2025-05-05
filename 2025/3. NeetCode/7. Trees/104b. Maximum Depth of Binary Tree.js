@@ -19,5 +19,6 @@ var maxDepth = function(root) {
     return 1 + Math.max(leftDepth, rightDepth);
 };
 
+// Using DFS Shortcut
 // Time Complexity: O(n)
 // Space Complexity: O(n)
