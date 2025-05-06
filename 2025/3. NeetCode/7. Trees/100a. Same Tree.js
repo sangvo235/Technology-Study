@@ -12,17 +12,21 @@
  * @return {boolean}
  */
 var isSameTree = function(p, q) {
-    // checks
-    if (!p && !q) return true;
-    if (!p || !q) return false;
+    let queue = [[p,q]];
 
-    if (p.val === q.val) {
-        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    while (queue.length > 0) {
+        let [node1, node2] = queue.shift();
+
+        if(!node1 && !node2) continue; 
+        if(!node1 || !node2 || node1.val !== node2.val) return false;
+
+        queue.push([node1.left, node2.left]);
+        queue.push([node1.right, node2.right]);
     }
 
-    // if (p.val !== q.val)
-    return false;
+    return true;
 };
 
+// BFS Method
 // Time Complexity: O(n)
 // Space Complexity: O(n)
