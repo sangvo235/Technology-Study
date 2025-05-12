@@ -40,6 +40,5 @@ var levelOrder = function(root) {
     return result;
 };
 
-// BFS Method
 // Time Complexity: O(n)
 // Space Complexity: O(n)
