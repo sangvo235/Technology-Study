@@ -18,5 +18,6 @@ var lastStoneWeight = function(stones) {
     return heap.size() === 0 ? 0 : heap.front();
 };
 
+// MaxPriorityQueue Method from LeetCode JS Library
 // Time Complexity: O(nlogn)
 // Space Complexity: O(n)
