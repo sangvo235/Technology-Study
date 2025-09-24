@@ -1,4 +1,4 @@
-class myHeap {
+class maxHeap {
     constructor() {
         this.data = []; // empty array to store values
     }
@@ -73,7 +73,7 @@ class myHeap {
  * @return {number}
  */
 var lastStoneWeight = function(stones) {
-    const heap = new myHeap();
+    const heap = new maxHeap();
 
     for (let stone of stones) {
         heap.push(stone);
@@ -91,6 +91,6 @@ var lastStoneWeight = function(stones) {
     return heap.data.length === 0 ? 0 : heap.data[0];
 };
 
-// Creating Own Heap Class Method in JS
+// Creating Max-Heap Class Method in JS
 // Time Complexity: O(nlogn)
 // Space Complexity: O(n)
