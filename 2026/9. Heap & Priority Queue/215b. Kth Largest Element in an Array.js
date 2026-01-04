@@ -70,11 +70,6 @@ class maxHeap {
     }
 }
 
-/**
- * @param {number[]} nums
- * @param {number} k
- * @return {number}
- */
 var findKthLargest = function(nums, k) {
     const heap = new maxHeap();
     for (let num of nums) heap.push(num);
