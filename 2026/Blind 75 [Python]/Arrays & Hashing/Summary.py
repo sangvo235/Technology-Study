@@ -21,3 +21,9 @@ int_map = defaultdict(int)
 
 # remember that mutable data types cannot be keys eg. list
 # solution -> use a tuple eg. sorted_s = tuple(sort(s))
+
+nums = [0,1,2,3]
+map = {} # val : index
+
+for i, n in enumerate(nums): # enumerate provides the index along with the number
+    map[n] = i # store the index
