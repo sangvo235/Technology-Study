@@ -27,3 +27,12 @@ map = {} # val : index
 
 for i, n in enumerate(nums): # enumerate provides the index along with the number
     map[n] = i # store the index
+
+# for n, c in count.items():
+# -> go through every key-value pair in the count dictionary, and call the key n and the value c
+
+# Python: 
+        # range(start, stop, step)
+        # for i in range(len(n) - 1, 0, -1)
+# JavaScript: 
+        # for (let i = n.length - 1; i > 0; i--)
