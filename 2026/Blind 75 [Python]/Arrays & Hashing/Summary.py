@@ -36,3 +36,10 @@ for i, n in enumerate(nums): # enumerate provides the index along with the numbe
         # for i in range(len(n) - 1, 0, -1)
 # JavaScript: 
         # for (let i = n.length - 1; i > 0; i--)
+
+array = [0,2,4,6,8,10]
+array.append(12)
+print(array)
+
+if len(array) != 4:
+    print("not length 4")
