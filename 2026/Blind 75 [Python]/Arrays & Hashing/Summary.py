@@ -37,9 +37,23 @@ for i, n in enumerate(nums): # enumerate provides the index along with the numbe
 # JavaScript: 
         # for (let i = n.length - 1; i > 0; i--)
 
-array = [0,2,4,6,8,10]
-array.append(12)
+array = [0,2,4,6,7,10,19,23]
+array.append(13)
+array.append(2)
+array.append(4)
 print(array)
 
 if len(array) != 4:
     print("not length 4")
+
+my_set = set(array)
+
+# Python doesn't allow you to change the size of a set while iterating over it.
+# We instead can use .copy() and iterate over it instead whilst removing in the original set
+for number in my_set.copy():
+        if number % 2 == 0:
+             my_set.remove(number)
+print(my_set)
+
+if len(my_set) == 4:
+    print("length == 4")
