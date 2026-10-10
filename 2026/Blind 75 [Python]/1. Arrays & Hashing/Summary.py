@@ -1,3 +1,8 @@
+# Lists
+arr[0]       # First element
+arr[-1]      # Last element
+len(arr)     # Length of list
+
 # city_map = {}
 # OR
 # city_map = dict()
@@ -15,7 +20,6 @@ cities = ["Calgary", "Vancouver", "Toronto"]
 city_map["Canada"] += cities
 
 city_list = city_map.values()
-
 
 int_map = defaultdict(int)
 
