@@ -1,1 +1,28 @@
-hello world
+class Solution:
+    def threeSum(self, nums: list[int]) -> list[list[int]]:
+        res = []
+        nums.sort()
+
+        for i, a in enumerate(nums):
+            # same value as prev
+            if i > 0 and a == nums[i-1]:
+                continue
+
+            l, r = i + 1, len(nums) - 1
+            while l < r:
+                threeSum = a + nums[l] + nums[r]
+                if threeSum > 0:
+                    r -= 1
+                elif threeSum < 0:
+                    l += 1
+                else:
+                    res.append([a, nums[l], nums[r]])
+                    # we can just update one pointer and 
+                    # the prev logic will shift the other pointer
+                    l += 1
+                    while nums[l] == nums[l - 1] and l < r:
+                        l += 1
+        return res
+
+# Time Complexity: O(N^2) -> the double loop supersedes the sorting in O notation
+# Space Complexity: O(N) -> python uses an in place sort called Timsort whcih has N space complexity in the worse case scenario
