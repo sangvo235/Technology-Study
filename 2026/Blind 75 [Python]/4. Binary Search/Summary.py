@@ -26,3 +26,7 @@ new_nums = sorted(nums)     # Create a new sorted list
 while l < r:
     mid = (l + r) // 2
     # Update l or r to make progress
+
+# CHAINED COMPARISON SYNTAX
+lower_bound < value <= upper_bound
+value > lower_bound and value <= upper_bound
