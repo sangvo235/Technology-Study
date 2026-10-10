@@ -1,5 +1,4 @@
 # STRING / CHARACTER
-
 c.isalnum()       # letter or number?
 c.lower()         # lowercase
 
