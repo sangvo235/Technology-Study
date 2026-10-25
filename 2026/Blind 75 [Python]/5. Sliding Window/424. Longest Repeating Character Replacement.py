@@ -12,8 +12,7 @@ class Solution:
                 count[s[l]] -= 1
                 l += 1
 
-            window_len = r - l + 1
-            res = max(res, window_len)
+            res = max(res, r - l + 1)
 
         return res
 
